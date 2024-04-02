@@ -1,0 +1,66 @@
+##Create New Environment using Anaconda
+conda create -p venv python==3.8 -y
+
+##Activate the Environment
+C:\Users\saksh\Documents\MLProject>conda activate venv/
+
+##Initialize Git and Sync with system folder
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git init
+Initialized empty Git repository in C:/Users/saksh/Documents/MLProject/.git/
+
+##Add README file
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git add README.md
+
+##Commit the README file
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git commit -m "First Commit README File" 
+
+##Check the status of commit
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git status
+
+##Cloning Github Repository
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git branch -M main
+
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git remote add origin https://github.com/sakshi-nischal/MLProject.git
+
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git config --global user.name "Sakshi Nischal"
+
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git config --global user.email sakshinischal0@gmail.com 
+
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git push -u origin main
+
+### Github in sync with local ###
+
+##Creating setup.py and requirements.txt
+-Create .gitignore file to ignore packages not required and commit (on Github)
+-Pull to local (Use Command: git pull)
+-Create setup.py (Metadata about the project -- Use to build ML application as a package)
+-Create a folder src and create __init__.py file (Evrytime find_packages() work it will look for __init__.py file to build the package and we can import this package at other locations using __init__.py)
+-Create requirements.txt (Specify all the packages need to be installed + add "-e ." at end which will trigger setup.py file)
+-Install specified requirements
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>pip install -r requirements.txt
+-Add to git
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git add .
+-Check Status
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git status		
+-Commit the changes
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git commit -m"Setup.py and Requirements.txt"
+-Push to git
+(C:\Users\saksh\Documents\MLProject\venv) C:\Users\saksh\Documents\MLProject>git push -u origin main
+ create mode 100644 src/__init__.py
+ 
+## Start building src package
+# Create a folder COMPONENTS
+-Create data_ingestion.py (Data Ingestion: Reading data from database + splitting data into train and test)
+-Create data_transformation.py (Data Transformation: Categorical to numerical, encoding, etc.)
+-Create model_trainer.py (Model Trainer: Code for training the model-Different models, classification matrix, accuracy)
+# Create a folder PIPELINES
+- Create train_pipeline.py (calls components package for training the model)
+- Create predict_pipeline.py (predict model output)
+# Create logger.py
+# Create exception.py
+# Create utils.py
+
+## Code for exception handling in exception.py
+-Create funcition for error message and custom exception classification
+## Code for tracking log details of any execution happening in logger.py
+-Create funcition for storing log details
